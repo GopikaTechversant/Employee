@@ -1,0 +1,40 @@
+<ng-container *ngIf="loading; else employeeTable">
+  <div class="loading-message">Loading...</div>
+</ng-container>
+<ng-template #employeeTable>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Age</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" >
+        <td (click)="showDetails(user.id.toString())">{{ user.id }}</td>
+        <td (click)="showDetails(user.id.toString())">{{ user.employee_name }}</td>
+        <td (click)="showDetails(user.id.toString())">{{ user.employee_salary }}</td>
+        <td (click)="showDetails(user.id.toString())">{{ user.employee_age }}</td>
+        <td (click)="showDetails(user.id.toString())">{{ user.profile_image }}</td>
+        <td>
+        <form name="f1" action="#">
+          <button type="button" class="btn btn-primary">Update</button>
+          <button type="button" class="btn btn-danger " (click)="deleteEmployee(employee?.id)">Delete</button>
+          <!-- <button (click)="createEmployee()" [routerLink] = "[employee-form]">Create </button> -->
+        </form>
+      </td>
+      </tr>
+    </tbody>
+  </table> 
+</ng-template>
+
+ 
+
+ 
+
+
+  
